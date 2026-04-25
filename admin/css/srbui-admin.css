@@ -1,0 +1,72 @@
+.srbui-wrap {
+    max-width: 1000px;
+}
+
+.srbui-role-selector-wrap {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.srbui-role-selector-wrap label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+#srbui-role-select {
+    min-width: 200px;
+}
+
+.srbui-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+}
+
+.menu-item-group {
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.submenu-items {
+    margin-left: 20px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu-items label {
+    font-size: 12px;
+    color: #666;
+}
+
+.tab-content {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+}
+
+.nav-tab-wrapper {
+    margin-bottom: 0;
+}
+
+.srbui-grid label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#srbui-msg {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+#srbui-msg.success { color: green; }
+#srbui-msg.error { color: red; }

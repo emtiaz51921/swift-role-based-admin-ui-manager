@@ -1,0 +1,234 @@
+# Copyright (C) 2026 Shamim Imtiaz
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Swift Role-Based Admin UI Manager 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/swift-role-based-admin-ui-manager\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-21T14:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: swift-role-based-admin-ui-manager\n"
+
+#. Plugin Name of the plugin
+#: swift-role-based-admin-ui-manager.php
+msgid "Swift Role-Based Admin UI Manager"
+msgstr ""
+
+#. Description of the plugin
+#: swift-role-based-admin-ui-manager.php
+msgid "Customize the WordPress admin interface per user role. Hide menus, admin bar nodes, dashboard widgets, and plugins."
+msgstr ""
+
+#. Author of the plugin
+#: swift-role-based-admin-ui-manager.php
+msgid "Shamim Imtiaz"
+msgstr ""
+
+#. Author URI of the plugin
+#: swift-role-based-admin-ui-manager.php
+msgid "http://imtiazshamim.com/"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:32
+msgid "Swift Role-Based Admin UI Manager"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:33
+msgid "Swift Role UI"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:57
+msgid "Saving..."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:58
+msgid "Settings saved!"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:59
+msgid "An error occurred."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:79
+msgid "All restrictions have been reset successfully."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:84
+msgid "Select User Role:"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:86
+msgid "Choose a role..."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:95
+msgid "Menus"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:96
+msgid "Admin Bar"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:97
+msgid "Dashboard"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:98
+msgid "Plugins"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:99
+msgid "Safety"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:106
+msgid "Hide Admin Menus"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:107
+msgid "Check the menus and submenus you want to HIDE for this role."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:114
+msgid "Hide Admin Bar Nodes"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:115
+msgid "Check the nodes you want to remove from the admin bar."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:122
+msgid "Hide Dashboard Widgets"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:123
+msgid "Disable selected dashboard widgets for this role."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:130
+msgid "Hide Plugins"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:131
+msgid "Hide selected plugins from the plugins list for this role."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:138
+msgid "Safety & Lockout Prevention"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:139
+msgid "Configure users and settings that are ALWAYS exempt from restrictions."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:142
+msgid "Excluded User IDs"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:143
+msgid "Enter User IDs (comma-separated) that should never see any UI restrictions."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:149
+msgid "Emergency Reset"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:150
+msgid "If you accidentally lock yourself out, use the following URL to reset all settings:"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:156
+msgid "Save Role Settings"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:173
+#: includes/class-srbui-admin-ui.php:207
+msgid "Unauthorized."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:178
+#: includes/class-srbui-admin-ui.php:212
+msgid "No role selected."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:197
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:252
+msgid "No menus available for this role."
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:281
+msgid "WordPress Logo"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:282
+msgid "Site Name"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:283
+msgid "Updates"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:284
+msgid "Comments"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:285
+msgid "New Content"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:286
+msgid "My Account (Profile)"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:287
+msgid "Search"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:288
+msgid "Secondary Menu"
+msgstr ""
+
+#: includes/class-srbui-admin-ui.php:325
+msgid "This role cannot see plugins by default."
+msgstr ""
+
+#: includes/class-srbui-dashboard-manager.php:65
+msgid "Activity"
+msgstr ""
+
+#: includes/class-srbui-dashboard-manager.php:66
+msgid "At a Glance"
+msgstr ""
+
+#: includes/class-srbui-dashboard-manager.php:67
+msgid "Quick Draft"
+msgstr ""
+
+#: includes/class-srbui-dashboard-manager.php:68
+msgid "WordPress Events and News"
+msgstr ""
+
+#: includes/class-srbui-dashboard-manager.php:69
+msgid "Site Health Status"
+msgstr ""
+
+#: includes/class-srbui-security.php:70
+msgid "You do not have sufficient permissions to reset settings."
+msgstr ""
+
+#. translators: %s: Reset URL
+#: includes/class-srbui-security.php:79
+msgid "Are you sure you want to reset all Role UI restrictions? %s"
+msgstr ""
+
+#: includes/class-srbui-security.php:80
+msgid "Confirm Reset"
+msgstr ""
