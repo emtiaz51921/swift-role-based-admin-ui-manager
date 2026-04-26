@@ -23,19 +23,40 @@ class SRBUI_Menu_Manager {
 
 	/**
 	 * Capture all registered menus into a transient for use in Settings AJAX.
+	 *
+	 * This runs at priority 9998 \u2014 BEFORE hide_menus() (9999) mutates the
+	 * globals \u2014 so the snapshot is always the full, unfiltered menu list.
+	 * We intentionally skip this in AJAX context: during AJAX the globals
+	 * may already be pruned, and we must not overwrite a good transient
+	 * with a partially-hidden one.
 	 */
 	public function capture_master_menu() {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
-		// Update the stored master menu whenever an admin visits the WP Dashboard.
-		// Checking for our settings page ensures it's fresh right when they need it,
-		// but capturing on any admin page load ensures it's generally available.
+		// Never capture during AJAX \u2014 menus may already be filtered by this point.
+		if ( wp_doing_ajax() ) {
+			return;
+		}
+
 		global $menu, $submenu;
 		if ( ! empty( $menu ) ) {
 			set_transient( 'srbui_menus_master_v2', array( 'menu' => $menu, 'submenu' => $submenu ), HOUR_IN_SECONDS );
 		}
+	}
+
+	/**
+	 * Bust the master menu transient cache.
+	 *
+	 * Should be called when the registered menu list itself changes, e.g. when
+	 * a plugin is activated or deactivated. Do NOT call on settings save \u2014
+	 * the transient stores which menus *exist*, not which are hidden; deleting
+	 * it on save causes the next AJAX role-switch to fall back to the
+	 * already-pruned globals and show \"No menus available for this role.\"
+	 */
+	public static function bust_menu_cache() {
+		delete_transient( 'srbui_menus_master_v2' );
 	}
 
 	/**
@@ -182,8 +203,10 @@ class SRBUI_Menu_Manager {
 			$master_menu    = is_array( $menu )    ? $menu    : array();
 			$master_submenu = is_array( $submenu ) ? $submenu : array();
 
-			// Only cache when the menu globals actually contain data.
-			if ( ! empty( $master_menu ) ) {
+			// Only cache when menus contain data AND we are NOT in an AJAX
+			// request. In AJAX context, hide_menus() may have already pruned
+			// the globals; writing them back would corrupt the transient.
+			if ( ! empty( $master_menu ) && ! wp_doing_ajax() ) {
 				set_transient( $cache_key, array( 'menu' => $master_menu, 'submenu' => $master_submenu ), HOUR_IN_SECONDS );
 			}
 
