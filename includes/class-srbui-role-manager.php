@@ -82,9 +82,28 @@ class SRBUI_Role_Manager {
 	}
 
 	/**
-	 * Clear all transients used for caching.
+	 * Clear transient caches that are safe to rebuild.
+	 *
+	 * Called after saving role settings. Intentionally does NOT delete
+	 * the menus master transient (`srbui_menus_master_v2`) because that
+	 * transient stores which menus *exist* in WordPress \u2014 not which are
+	 * hidden. It can only be rebuilt during a real page load (when the
+	 * `admin_menu` hook fires and populates the `$menu` globals). During
+	 * AJAX, the globals are empty, so deleting the transient here would
+	 * cause \"No menus available for this role.\" on the next role switch.
 	 */
 	public static function clear_cache() {
+		delete_transient( 'srbui_plugins_list' );
+	}
+
+	/**
+	 * Clear ALL transient caches including the menus master list.
+	 *
+	 * Should only be called when the set of registered menus actually
+	 * changes, e.g. on plugin activation/deactivation \u2014 NOT on settings
+	 * save. The next real admin page load will recapture the full menu.
+	 */
+	public static function clear_all_cache() {
 		delete_transient( 'srbui_plugins_list' );
 		delete_transient( 'srbui_menus_master_v2' );
 	}

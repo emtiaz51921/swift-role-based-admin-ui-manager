@@ -84,8 +84,8 @@ final class SRBUI {
 	 * Initialize hooks.
 	 */
 	private function init_hooks() {
-		add_action( 'activated_plugin', array( 'SRBUI_Role_Manager', 'clear_cache' ) );
-		add_action( 'deactivated_plugin', array( 'SRBUI_Role_Manager', 'clear_cache' ) );
+		add_action( 'activated_plugin', array( 'SRBUI_Role_Manager', 'clear_all_cache' ) );
+		add_action( 'deactivated_plugin', array( 'SRBUI_Role_Manager', 'clear_all_cache' ) );
 		
 		// Initialize components.
 		if ( is_admin() ) {
