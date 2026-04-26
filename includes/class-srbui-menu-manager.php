@@ -24,8 +24,8 @@ class SRBUI_Menu_Manager {
 	/**
 	 * Capture all registered menus into a transient for use in Settings AJAX.
 	 *
-	 * This runs at priority 9998 \u2014 BEFORE hide_menus() (9999) mutates the
-	 * globals \u2014 so the snapshot is always the full, unfiltered menu list.
+	 * This runs at priority 9998 — BEFORE hide_menus() (9999) mutates the
+	 * globals — so the snapshot is always the full, unfiltered menu list.
 	 * We intentionally skip this in AJAX context: during AJAX the globals
 	 * may already be pruned, and we must not overwrite a good transient
 	 * with a partially-hidden one.
@@ -35,7 +35,7 @@ class SRBUI_Menu_Manager {
 			return;
 		}
 
-		// Never capture during AJAX \u2014 menus may already be filtered by this point.
+		// Never capture during AJAX — menus may already be filtered by this point.
 		if ( wp_doing_ajax() ) {
 			return;
 		}
@@ -50,10 +50,10 @@ class SRBUI_Menu_Manager {
 	 * Bust the master menu transient cache.
 	 *
 	 * Should be called when the registered menu list itself changes, e.g. when
-	 * a plugin is activated or deactivated. Do NOT call on settings save \u2014
+	 * a plugin is activated or deactivated. Do NOT call on settings save —
 	 * the transient stores which menus *exist*, not which are hidden; deleting
 	 * it on save causes the next AJAX role-switch to fall back to the
-	 * already-pruned globals and show \"No menus available for this role.\"
+	 * already-pruned globals and show "No menus available for this role."
 	 */
 	public static function bust_menu_cache() {
 		delete_transient( 'srbui_menus_master_v2' );

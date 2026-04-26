@@ -57,6 +57,13 @@ No. The plugin is lightweight and only runs in the admin area.
 = Can I revert changes easily? =
 Yes. You can update settings anytime or disable the plugin to restore the default WordPress admin interface.
 
+== Screenshots ==
+
+1. Admin menu settings
+2. Admin bar settings
+3. Dashboard widget settings
+4. Plugin visibility settings
+5. Safety & Lockout Prevention
 
 == Changelog ==
 
